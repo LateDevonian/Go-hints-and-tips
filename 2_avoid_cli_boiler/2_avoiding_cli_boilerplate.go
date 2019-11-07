@@ -1,4 +1,4 @@
-package main
+package avoidboiler
 
 import (
 	"fmt"

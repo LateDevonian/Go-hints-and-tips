@@ -1,0 +1,4 @@
+faster routing is provided by other packages. eg github.com/bmixerany/pat 
+routs similar to sinatra.
+there are 
+github.com/gorilla/pat, /julienschmidt/httprouter, /gorilla/mux

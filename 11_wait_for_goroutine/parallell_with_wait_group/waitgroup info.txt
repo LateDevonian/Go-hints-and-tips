@@ -1,0 +1,14 @@
+a wait group is a message passing facility toat signals a waiting 
+goroutine when it's safe to proceed.
+tell wait group when you want it to wait for something
+signal whwn the thing is done
+needs to know a) number of things it's waiting for
+b) when the thing is done.
+increment a with wg.Add and when completed signal with wg.Done.
+wg.Wait blocks until all tasks that are added are done.
+
+call wg.Done inside a goroutine
+
+so there is a schedular for a goroutine but this might exceute them.
+anytime a loop excecutes a goroutine, make sure variables the goroutine uses are not changed
+by the loop. so make copies of the variouables within the loop.

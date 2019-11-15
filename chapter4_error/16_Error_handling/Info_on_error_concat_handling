@@ -1,0 +1,37 @@
+go returns the error last, always
+eg
+
+func Concat(parts ...string) (string, error) {
+    if len(parts) == 0 {
+        return "", errors.New("No strings supplied")
+    }
+    return strings.Join(parts, " "), nil
+}
+
+concat takes any number of strings and concats. if no strings are passed,
+it returns an error.
+by using the ...prefix before a type, tell go that any number of
+that type of argument is allowed. go collapses these into a slice
+of that ttype. so parts would be treated as []string
+**
+
+
+func main() {
+    //uses just the arges after Arg[0] - don't use program name
+    args := os.Args[1:]
+    if result, err := Concat(args...); err != nil {
+        fmt.Printf("Error: %s\n", err)
+    } else {
+        fmt.Printf("Concatenated string : '%s'\n", result)
+    }
+}
+
+Go's if statement has an optional assignemtn clause before the expression
+this allows you to get ready for evaluation but stay in scope
+so the result/error are within the scope of if statement only 
+
+this is a two part if statement.  you assign the return vlaues of concat
+to resulet and error, then you check to see if error isn't nil
+if it's set to something, thenn print the error.
+the error and result are in scope for the entire if statement.
+

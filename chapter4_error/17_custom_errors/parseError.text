@@ -1,0 +1,22 @@
+the error interface:
+
+type error interface {
+    Error() string
+}
+
+anything that has an Error function returning a string satisfices this
+
+you can create a type that implements a custom error interface with additional functionality
+
+type ParseError struct {
+    Message string //error message without location information
+    Line, Char int //location information
+}
+func (p *ParseError) Error() string {
+    format := "%s o1n Line %d, Char %d"
+    return fmt.Sprintf(format, p.Message, p.Line, p.Char)
+    //implements the error interface
+}
+
+forma the three bits of infomraiton into one string and also return tothe 
+source of the parse error and display that entire line

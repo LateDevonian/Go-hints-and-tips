@@ -1,0 +1,2 @@
+example 2019/11/30 08:39:25 log_to_file.go:14: This is a regualar message.
+example 2019/11/30 08:39:25 log_to_file.go:15: this is a fatal error

@@ -12,6 +12,11 @@ func slowFunc() {
 
 func main() {
 	go slowFunc()
-	fmt.Println("I am now shown straightaway")
+	// the first attempt at this just had this line which
+	//showed that the call to slofucnc was never seen
+	//fmt.Println("I am now shown straightaway")
+	//so we add a sleep
+	fmt.Println("i am not shown until slwoFunc() completes")
+	time.Sleep(time.Second * 3)
 
 }

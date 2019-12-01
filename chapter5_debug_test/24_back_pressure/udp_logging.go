@@ -7,6 +7,8 @@ import (
 )
 
 //run nc -lk 1902 to satart a server using netcat
+//tcp logging is prone to back pressure but UDP
+//logging can't guarantee data accuracy
 
 func main() {
 	timeout := 30 * time.Second

@@ -9,6 +9,7 @@ func main() {
 	// the faclity to log to is log_local3
 	//the prefix you want the message to start with narwhal
 	//shoutl be the service name
+	//will write to the syslog, eg var/log/messges
 	logger, err := syslog.New(syslog.LOG_LOCAL3, "narwhal")
 	if err != nil {
 		panic("cannot attach to syslog")

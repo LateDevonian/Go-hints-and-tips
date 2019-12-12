@@ -6,6 +6,7 @@ import (
 	"text/template"
 )
 
+//run this with go test -bench . -cpu1,24
 //parallel benchmark tests how a given peice of code performs when on goroutines
 //test with variable cpus
 //testing.B instance provides a RunParallel method.

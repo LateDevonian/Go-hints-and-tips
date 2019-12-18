@@ -1,0 +1,7 @@
+http package in standard library has constants for status codes
+a client can read the codes teh server responds with to learn why
+res.StatusCode is looking, eg, check for a success in the 200 range
+
+res, _ := http.Get("http://example.com")
+fmt.Println(res.Status) -- text message for the status egg 200 ok, 404 not found
+fmt.Println(res.StatusCode) -- this is the int.

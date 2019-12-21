@@ -1,0 +1,6 @@
+go standard library has templetes for text and html. has a foundation. 
+packages used: html and html/template, text/template (txt only)
+
+<title>{{.Title}}</title> -- title based on Title property
+actions (directions) adre enclused in double curly brackets.
+it's all very complicated 

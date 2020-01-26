@@ -1,0 +1,32 @@
+1. build an error resonse in json. 
+keep same response format 
+as other rest api responses with an applicaiton specific
+error code in addition to http error. 
+the example given (not run) returns a json response rather than a string
+eg
+{   
+    "error": {
+        "code": 123,
+        "message": "An error occurred"
+    }
+}
+
+Reading and using custom errors
+any client can work with http status codes to detect an error
+eg this snppet
+
+res, err := http.Get("http://goinpracticebook.com/")
+
+switch {
+    case 300 <= res.StatusCode && res.StatusCode < 400:
+        fmt.Println("Redirect Message")
+    case 400 <= res.StatusCode && res.StatusCode < 500:
+        fmt.Println("Client error")
+    case 500 <= res.StatusCode && res.StatusCode < 600:
+        fmt.Println("Server Error)
+}
+
+the default http client setting is to follow 10 redirects so one 
+almost never sees this error.
+400 is things like access denied, not found.
+500 is a server error 

@@ -1,0 +1,5 @@
+if an appl responds with errors, presents the api response in a different structue as well as tehre is an errors
+how to detect and handle it differently:
+check HTTP code and MIME type
+when one of these give unexpected value or error, convert it 
+to an error, return the error and handles it

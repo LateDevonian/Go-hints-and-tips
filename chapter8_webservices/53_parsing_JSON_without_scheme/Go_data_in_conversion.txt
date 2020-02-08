@@ -1,0 +1,45 @@
+/note when json is parsed into a struct, it's accessible. name will be p.Name
+//get an error in an interface
+//need to accepss it ias a type other than an interface{}
+//in this case JSON is an object o you can use type map[]string interface, to provide
+//access to the next level of data. so to access firstname:
+//m := f.(map[string]interface{})
+//fmt.Println(m["firstname"])
+
+
+how does go treat data in a conversion from a json object to an interface
+
+when json is unmarshelled, the values in json are conversted into the following 
+go types:
+bool for json boolean
+float64 for json numbers
+[]interface{} for json arrays
+map[string]interace{} for json objects
+ nil for JSON null
+ string for Json string
+
+ knowing this you can build functionality to walk the data structure. eg, 
+ this shows functions recursively walking the parsed json, printing name,s types, and values
+
+ func printJson(v interface{}) {
+     switch vv := v.(type) {
+         case string: 
+            fmt.Println("is string", vv)
+        case float64:
+            fmt.Println("is float64", vv)
+        case []interface{}:
+            fmt.Printlin(Is an array: ")
+            for i, u, range vv {
+                fmt.Println(i, " ")
+                printJSON(u)
+            }
+        case map[string]interface{}:
+            fmt.Println("is an object:")
+            for i, u := range vv {
+                fmt.Print(i, " ")
+                printJSON(u)
+            }
+        default:
+            fmt.Printlin("unknown type)
+     }
+ }

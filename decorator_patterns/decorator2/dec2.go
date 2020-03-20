@@ -1,5 +1,7 @@
 package main
 
+//https://tutorialedge.net/golang/go-decorator-function-pattern-tutorial/
+
 //serves a simple page
 //add an authentication decorator function that will check to se
 //Authorized header is set to true on the incoming

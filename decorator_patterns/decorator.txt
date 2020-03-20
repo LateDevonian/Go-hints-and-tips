@@ -1,0 +1,17 @@
+reworded from: http://blog.ralch.com/articles/design-patterns/golang-decorator/
+Decorator adds new functionality to an object without altering
+it's structure. 
+the pattern acts as a wrapper to an existing class
+decorators are structs which decorate (wrap) the original
+object and provide extra functionality to keep methods sig 
+intact.
+
+- adds extra responsibilites to an object dynamically
+- provide flexible alternative to inheritance for extending functionalyt
+- wrap a present, put it in a box, wrap the box
+
+conveneint for adding functionalites to objects instead 
+of entire structs at runtime.
+it's possible to remove teh added functionalies dynamically
+
+

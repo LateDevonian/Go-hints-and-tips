@@ -14,4 +14,4 @@ conveneint for adding functionalites to objects instead
 of entire structs at runtime.
 it's possible to remove teh added functionalies dynamically
 
-
+https://gist.github.com/Nirma/c3faac6c5c8d8f30468f
